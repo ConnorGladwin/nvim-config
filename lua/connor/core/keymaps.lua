@@ -34,8 +34,8 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 keymap.set("n", "<leader>w", ":w!<CR>") -- save shortcut
 
 -- buffer navigation
-keymap.set("n", "<leader>{", ":bprev<CR>")
-keymap.set("n", "<leader>}", ":bnext<CR>")
+-- keymap.set("n", "<leader>{", ":bprev<CR>")
+keymap.set("n", "<leader><tab>", ":bnext<CR>")
 
 ----------------------
 -- Plugin Keybinds

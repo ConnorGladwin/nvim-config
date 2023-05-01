@@ -112,7 +112,22 @@ return packer.startup(function(use)
 	-- using packer.nvim
 	use({ "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" })
 
-	use({ "xiyaowong/transparent.nvim" })
+	use({ "xiyaowong/transparent.nvim" }) -- transparent background
+
+	use({ "github/copilot.vim" }) -- github copilot
+
+	-- error diagnostics
+	use({
+		"folke/trouble.nvim",
+		requires = "nvim-tree/nvim-web-devicons",
+		config = function()
+			require("trouble").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	})
 
 	if packer_bootstrap then
 		require("packer").sync()
