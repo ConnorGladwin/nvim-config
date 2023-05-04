@@ -35,7 +35,9 @@ return packer.startup(function(use)
 
 	-- use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
 
-	use({ "catppuccin/nvim", as = "catppuccin" })
+	-- use({ "catppuccin/nvim", as = "catppuccin" })
+
+	use("folke/tokyonight.nvim")
 
 	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
@@ -113,6 +115,13 @@ return packer.startup(function(use)
 	use({ "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" })
 
 	use({ "xiyaowong/transparent.nvim" })
+
+	use({
+		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+		config = function()
+			require("lsp_lines").setup()
+		end,
+	})
 
 	if packer_bootstrap then
 		require("packer").sync()
