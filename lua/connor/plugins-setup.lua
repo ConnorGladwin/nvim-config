@@ -37,7 +37,9 @@ return packer.startup(function(use)
 
 	-- use({ "catppuccin/nvim", as = "catppuccin" })
 
-	use("folke/tokyonight.nvim")
+	-- use("folke/tokyonight.nvim")
+
+	use("Mofiqul/dracula.nvim")
 
 	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
@@ -121,6 +123,19 @@ return packer.startup(function(use)
 		config = function()
 			require("lsp_lines").setup()
 		end,
+	})
+
+	use({
+		"glepnir/dashboard-nvim",
+		event = "VimEnter",
+		config = function()
+			require("dashboard").setup({
+				week_header = {
+					enable = true, --boolean use a week headere
+				},
+			})
+		end,
+		requires = { "nvim-tree/nvim-web-devicons" },
 	})
 
 	if packer_bootstrap then
